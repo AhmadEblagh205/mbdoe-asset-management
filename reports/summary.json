@@ -1,0 +1,90 @@
+{
+  "alpha_learning": {
+    "prior_sd": 0.2,
+    "final_trace_variance": {
+      "A-optimal": 0.208858,
+      "D-optimal": 0.215647,
+      "max-uncertainty": 0.242266,
+      "random": 0.23395,
+      "static": 0.302612
+    },
+    "final_logdet_precision": {
+      "A-optimal": 29.4934,
+      "D-optimal": 29.6703,
+      "max-uncertainty": 27.9842,
+      "random": 28.289,
+      "static": 26.3241
+    },
+    "rounds_to_random_final_trace": {
+      "A-optimal": 101,
+      "D-optimal": 112,
+      "max-uncertainty": null,
+      "random": 156,
+      "static": null
+    },
+    "final_probe_reconfiguration_l1": {
+      "A-optimal": 294.23,
+      "D-optimal": 309.62,
+      "max-uncertainty": 139.63,
+      "random": 249.94,
+      "static": 0.72
+    }
+  },
+  "model_discrimination": {
+    "config": {
+      "n_assets": 10,
+      "n_periods": 180,
+      "k_watch": 3,
+      "informativeness_log_sd": 1.5,
+      "max_context_multiplier": 10.0
+    },
+    "periods_to_95_mean_trajectory": {
+      "designed": 33,
+      "random": 104
+    },
+    "queries_to_95_mean_trajectory": {
+      "designed": 99,
+      "random": 312
+    },
+    "crossing_distribution": {
+      "designed": {
+        "crossed_fraction": 1.0,
+        "median_periods_if_crossed": 29.0,
+        "p10_periods_if_crossed": 19.900000000000002,
+        "p90_periods_if_crossed": 50.099999999999994
+      },
+      "random": {
+        "crossed_fraction": 0.945,
+        "median_periods_if_crossed": 88.0,
+        "p10_periods_if_crossed": 54.0,
+        "p90_periods_if_crossed": 136.0
+      }
+    },
+    "heterogeneity_sensitivity": [
+      {
+        "informativeness_log_sd": 0.0,
+        "designed_periods": 193,
+        "random_periods": 197,
+        "random_over_designed_speedup": 1.0207253886010363
+      },
+      {
+        "informativeness_log_sd": 0.5,
+        "designed_periods": 68,
+        "random_periods": 140,
+        "random_over_designed_speedup": 2.0588235294117645
+      },
+      {
+        "informativeness_log_sd": 1.0,
+        "designed_periods": 38,
+        "random_periods": 119,
+        "random_over_designed_speedup": 3.1315789473684212
+      },
+      {
+        "informativeness_log_sd": 1.5,
+        "designed_periods": 32,
+        "random_periods": 102,
+        "random_over_designed_speedup": 3.1875
+      }
+    ]
+  }
+}
