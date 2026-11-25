@@ -84,3 +84,12 @@ The resulting quantity is labelled **synthetic true-alpha Sharpe**. It is not a 
 ## 4. Reconfiguration metric
 
 `learning_per_cost.png` uses cumulative L1 change in probe weights. It is best interpreted as **probe reconfiguration distance**. If the synthetic measurement vectors were implemented as tradable portfolios, multiplying that distance by a transaction-cost assumption would produce an illustrative cost, but the repository no longer presents that conversion as an inherent cost of learning.
+
+
+## Notes moved from the README
+
+- Study 1 hides an eight-dimensional annualised alpha vector. Each weekly round gives one scalar measurement z_t = w_t'alpha + eta_t with eta_t ~ N(0, 52 w_t' Sigma w_t), and the posterior update is conjugate Gaussian. The five policies are A-optimal (greedy minimum of trace(C)), D-optimal (greedy maximum of log det(P)), the max-uncertainty heuristic, random probes and a static direction.
+- A and D directions are solved as symmetric generalised eigenproblems. The max-uncertainty policy is E-inspired, not exact E-optimal.
+- After 156 weekly rounds, A-optimal reaches the random policy's final total posterior variance after 101 rounds and D-optimal after 112. A repeated static direction adds only rank-one information, so it barely explores the parameter space.
+- Exploit study, 208 probe rounds and 200 paired worlds, mean synthetic Sharpe: A-optimal 0.163, D-optimal 0.177, random 0.131, static 0.020, oracle with the true alpha 0.680. The paired 95% bootstrap interval for the improvement over random is -0.015 to 0.082 (A) and -0.003 to 0.096 (D), so both include zero. The max-uncertainty heuristic does worse than random in this study.
+- Sensitivity of discrimination to the log-SD of informativeness (designed rounds, random rounds): 0.0 gives 193 and 197; 0.5 gives 68 and 140; 1.0 gives 38 and 119; 1.5 gives 32 and 102.
